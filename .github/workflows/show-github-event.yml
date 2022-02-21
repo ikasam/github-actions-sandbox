@@ -7,5 +7,11 @@ jobs:
   show-github-event:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ toJson(github.event) }}
-      - run: echo ${{ toJson(github.event_name) }}
+      - run: |
+          cat << OBJECT
+          ${{ toJson(github.event) }}
+          OBJECT
+      - run: |
+          cat << OBJECT
+          ${{ toJson(github.event_name) }}
+          OBJECT
