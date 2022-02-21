@@ -1,0 +1,13 @@
+name: release/released
+
+on:
+  release:
+    types:
+      - released
+
+jobs:
+  released:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.event }}
+      - run: echo ${{ github.event_name }}
