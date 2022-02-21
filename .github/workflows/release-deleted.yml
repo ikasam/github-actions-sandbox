@@ -7,8 +7,5 @@ on:
       - deleted
 
 jobs:
-  released:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ${{ github.event }}
-      - run: echo ${{ github.event_name }}
+  deleted:
+    uses: ./.github/workflows/show-github-event.yml

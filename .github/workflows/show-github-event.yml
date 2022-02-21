@@ -1,0 +1,11 @@
+name: Show GitHub event
+
+on:
+  workflow_call:
+
+jobs:
+  show-github-event:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ toJson(github.event) }}
+      - run: echo ${{ toJson(github.event_name) }}

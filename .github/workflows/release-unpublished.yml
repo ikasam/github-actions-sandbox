@@ -7,8 +7,5 @@ on:
       - unpublished
 
 jobs:
-  released:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ${{ github.event }}
-      - run: echo ${{ github.event_name }}
+  unpublished:
+    uses: ./.github/workflows/show-github-event.yml
