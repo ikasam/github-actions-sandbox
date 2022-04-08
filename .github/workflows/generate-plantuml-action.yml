@@ -1,0 +1,21 @@
+name: docs
+
+on:
+  push:
+    branches:
+      - main
+      - feature/generate-svg-from-plantuml
+    paths:
+      - docs/*.puml
+
+jobs:
+  generate-svg-from-plantuml:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: grassedge/generate-plantuml-action@7795d4ecf0934e3e52cb1244f8ca2e9869939cf8
+        with:
+          path: docs
+          message: "Create image files by GitHub Action (docs.yml)"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
