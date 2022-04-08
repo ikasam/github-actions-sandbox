@@ -1,0 +1,6 @@
+@startuml
+Entity01 }|..|| Entity02
+Entity03 }o..o| Entity14
+Entity05 ||--o{ Entity06
+Entity07 |o--|| Entity10
+@enduml
